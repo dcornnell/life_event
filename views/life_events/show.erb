@@ -1,0 +1,22 @@
+<html>
+<head>
+
+</head>
+<body>
+
+<%= @life_event.description %><br>
+<%= @life_event.location %><br>
+<%= @life_event.date %><br>
+
+<form action="/life_events/<%=@life_event.id %>/delete" method="post">
+	<input type="hidden" name="_method" value="delete" />
+	<br>
+	<input type="submit" value="Delete" />
+	</form>
+
+	
+
+
+
+</body>
+</html>

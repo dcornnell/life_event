@@ -1,0 +1,12 @@
+Do you want to change? 
+<form action="/schools/<%= @school.id %>" method="post" id="edit">
+			<input type="hidden" name="_method" value="put" />
+ 
+    
+    	<input type="text"  id="name" name="school[name]" value="<%= @school.name %>" / ><br>
+    	<input type="text"  id="location" name="school[location]" value="<%= @school.location %>" / ><br>
+    	<input type="text"  id="graduation_date" name="school[graduation_date]" value="<%= @school.graduation_date %>" / ><br>
+    	<br>
+    	<input type="submit" value="Change!" /><br><br>
+   </form>
+

@@ -1,0 +1,22 @@
+<html>
+<head>
+
+</head>
+<body>
+
+<%= @school.name %><br>
+<%= @school.location %><br>
+<%= @school.graduation_date %><br>
+
+<form action="/schools/<%=@school.id %>/delete" method="post">
+	<input type="hidden" name="_method" value="delete" />
+	<br>
+	<input type="submit" value="Delete" />
+	</form>
+
+	
+
+
+
+</body>
+</html>

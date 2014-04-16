@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Schools</title>
+	
+</head>
+<body>
+
+
+<h1>Schools</h1>
+
+<ul>
+<% @schools.each do |school| %>
+<li><%= school.name %><%= school.location %><%= school.graduation_date %></li>
+<% end %>
+</ul>
+
+<a href="/schools/new"><button id="add">add school</button></a>
+
+<form action="/schools/search" method="post" id="search">
+	<input type="text" id="search" name="search">
+	<input type="submit" >
+</form>
+
+<a href="../main">back</a>
+
+
+</body>
+</html>

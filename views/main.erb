@@ -1,0 +1,30 @@
+<Html>
+
+<a href="/schools">Schools</a>
+<ul>
+<% @schools.each do |school| %>
+<li>
+	<%= school.name %>
+	<a href="schools/<%= school.id %>">delete</a>
+	<a href="schools/<%= school.id %>/edit">edit</a>
+</li>
+<% end %>
+</ul>
+</div>
+
+
+<a href="/life_events">Life events</a>
+
+
+
+<ul>
+<% @life_events.each do |life_event| %>
+<li>
+<%= life_event.description %>
+<a href="life_events/<%= life_event.id %>">delete</a>
+<a href="life_events/<%= life_event.id %>/edit">edit</a>
+</li>
+<% end %>
+</div>
+</div>
+</Html>

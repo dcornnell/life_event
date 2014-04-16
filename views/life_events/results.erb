@@ -1,0 +1,17 @@
+
+<html>
+<ul>
+<% @search_results.each do |life_event| %>
+	<li>
+		<%= life_event.description %><br>
+		<%= life_event.location %><br>
+		<%= life_event.date %>
+		<br>
+		<a href="../index">back</a>
+
+		
+	</li>
+<% end %>
+</ul>
+
+</html>
