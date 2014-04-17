@@ -2,8 +2,11 @@
 <ul>
 <% @search_results.each do |school| %>
 	<li>
-		<%= school.name %>
-		<%= school.location %>
+		<%= school.name %><br>
+		<%= school.location %><br>
+		<%= school.graduation_date %><br>
+		<br>
+		<br>
 		
 	</li>
 <% end %>

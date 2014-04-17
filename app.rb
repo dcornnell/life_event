@@ -22,7 +22,11 @@ end
 post '/schools' do
 	@school = School.new(params[:school])
 	@school.save
-	redirect :"schools"
+	if @school.name =="" 
+		redirect :'schools/new'
+	else
+		redirect :"schools"
+	end
 end
 
 get '/schools/:id' do
@@ -67,7 +71,11 @@ end
 post '/life_events' do
 	@life_event = LifeEvent.new(params[:life_event])
 	@life_event.save
-	redirect :"life_events"
+	if @life_event.description =="" 
+		redirect :'life_events/new'
+	else
+		redirect :"life_events"
+	end
 end
 
 get '/life_events/:id' do
@@ -76,7 +84,7 @@ get '/life_events/:id' do
 end
 
 delete '/life_events/:id/delete' do
-	@life_event = LifeEevent.find(params[:id])
+	@life_event = LifeEvent.find(params[:id])
 	@life_event.delete
 	redirect :"/life_events"
 end
@@ -97,6 +105,9 @@ post '/life_events/search' do
 	@search_results =LifeEvent.where(description: @user_input)
 	erb :"life_events/results"
 end
+
+
+
 
 
 class School <ActiveRecord::Base
