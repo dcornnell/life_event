@@ -1,17 +1,25 @@
-
+<!DOCTYPE html>
 <html>
+<head>
+	<title>Life Events</title>
+	<link rel="stylesheet" type="text/css" href="/../application.css">
+</head>
+<body>
+
+<div class="container">
 <ul>
 <% @search_results.each do |life_event| %>
 	<li>
 		<%= life_event.description %><br>
 		<%= life_event.location %><br>
-		<%= life_event.date %>
+		<%= life_event.date.strftime("%b %d, %Y") %>
 		<br>
-		<a href="../index">back</a>
+		
 
 		
 	</li>
 <% end %>
 </ul>
-
+<a href="/life_events">back</a>
+</div>
 </html>

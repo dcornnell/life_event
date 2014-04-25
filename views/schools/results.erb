@@ -1,16 +1,29 @@
+<!DOCTYPE html>
 <html>
-<ul>
-<% @search_results.each do |school| %>
-	<li>
-		<%= school.name %><br>
-		<%= school.location %><br>
-		<%= school.graduation_date %><br>
-		<br>
-		<br>
-		
-	</li>
-<% end %>
-</ul>
+<head>
+	<title>Life Events</title>
+	<link rel="stylesheet" type="text/css" href="/../application.css">
+</head>
+<body>
 
-Hello
+<div class="container">
+<table class= "table">
+<th>Name</th>
+<th>Location</th>
+<th>Graduation Date</th>
+<% @search_results.each do |school| %>
+	<tr>
+		<td><%= school.name %></td>
+		<td><%= school.location %></td>
+		<td><%= school.graduation_date.strftime("%b %d, %Y") %></td>
+	</tr>
+		
+		
+
+<% end %>
+</table>
+
+<a href="/schools">back</a>
+</div>
+</body>
 </html>

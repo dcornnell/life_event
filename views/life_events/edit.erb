@@ -1,12 +1,23 @@
-Do you want to change? 
-<form action="/life_events/<%= @life_event.id %>" method="post" id="edit">
-			<input type="hidden" name="_method" value="put" />
- 
-    
-    	<input type="text"  id="name" name="life_event[description]" value="<%= @life_event.description %>" / ><br>
-    	<input type="text"  id="location" name="life_event[location]" value="<%= @life_event.location %>" / ><br>
-    	<input type="text"  id="graduation_date" name="life_event[date]" value="<%= @life_event.date %>" / ><br>
-    	<br>
-    	<input type="submit" value="Change!" /><br><br>
-   </form>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Life Events</title>
+	<link rel="stylesheet" type="text/css" href="/../application.css">
+</head>
+<body>
+
+<div class="container">
+	Do you want to change? 
+	<form action="/life_events/<%= @life_event.id %>" method="post" id="edit">
+				<input type="hidden" name="_method" value="put" />
+	 
+	    
+	    	<input type="text"  id="name" name="life_event[description]" value="<%= @life_event.description %>" / ><br>
+	    	<input type="text"  id="location" name="life_event[location]" value="<%= @life_event.location %>" / ><br>
+	    	<input type="text"  id="graduation_date" name="life_event[date]" value="<%= @life_event.date %>" / ><br>
+	    	<br>
+	    	<input type="submit" value="Change!" /><br><br>
+	   </form>
+
+</div>
 

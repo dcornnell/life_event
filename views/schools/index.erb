@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Schools</title>
-	
+	<title>Life Events</title>
+	<link rel="stylesheet" type="text/css" href="/../application.css">
 </head>
 <body>
+
+<div class="container">
 
 
 <h1>Schools</h1>
 
-<ul>
+<table class="table table-striped">
+<th> Name
+<th> Location
+<th> Graduation Date
 <% @schools.each do |school| %>
-<li><%= school.name %>&nbsp;<%= school.location %>&nbsp;<%= school.graduation_date %></li>
+<tr>
+	<td><%= school.name %></td>
+	<td><%= school.location %></td>
+	<td><%= school.graduation_date.strftime("%b %d, %Y") %></td>
+</tr>
 <% end %>
-</ul>
+</table>
 
 <a href="/schools/new"><button id="add">add school</button></a>
+<br>
+<h1>Search Schools</h1>
 
 <form action="/schools/search" method="post" id="search">
 	<input type="text" id="search" name="search">
@@ -24,6 +35,6 @@
 
 <a href="../main">back</a>
 
-
+</div>
 </body>
 </html>

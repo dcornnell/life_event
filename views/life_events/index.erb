@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>life_events</title>
-	
+	<title>Life Events</title>
+	<link rel="stylesheet" type="text/css" href="application.css">
 </head>
 <body>
 
+<div class="container">
+	<h1>Life Events</h1>
 
-<h1>life_events</h1>
+	<table class="table table-striped">
+		<th>Description</th>
+		<th>Location</th>
+		<th>Date</th>
+		<% @life_events.each do |life_event| %>
+			<tr>
+				<td><%= life_event.description %></td>
+				<td><%= life_event.location %></td>
+				<td><%= life_event.date.strftime("%b %d, %Y") %></td>
+			</tr>
+		<% end %>
+	</table>
 
-<ul>
-<% @life_events.each do |life_event| %>
-<li><%= life_event.description %>&nbsp;<%= life_event.location %>&nbsp;<%= life_event.date %>&nbsp;</li>
-<% end %>
-</ul>
+	<a href="/life_events/new"><button id="add">add life_event</button></a>
 
-<a href="/life_events/new"><button id="add">add life_event</button></a>
+	<form action="/life_events/search" method="post" id="search">
+		<input type="text" id="search" name="search">
+		<input type="submit" >
+	</form>
 
-<form action="/life_events/search" method="post" id="search">
-	<input type="text" id="search" name="search">
-	<input type="submit" >
-</form>
-
-<a href="../main">back</a>
-
+	<a href="../main">back</a>
+</div>
 </body>
 </html>

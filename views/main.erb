@@ -1,30 +1,35 @@
 <Html>
-
-<a href="/schools">Schools</a>
-<ul>
-<% @schools.each do |school| %>
-<li>
-	<%= school.name %>
-	<a href="schools/<%= school.id %>">delete</a>
-	<a href="schools/<%= school.id %>/edit">edit</a>
-</li>
-<% end %>
-</ul>
+<head>
+<link rel="stylesheet" type="text/css" href="application.css">
+</head>
+<body>
+<div class="container">
+<h1><a href="/schools">Schools</a></h1>
+	<table class="table table-striped">
+		<th>Name</th>
+		<th>Delete</th>
+		<th>Edit</th>
+		<% @schools.each do |school| %>
+	
+			<tr>
+				<td><%= school.name %></td>
+				<td><a href="schools/<%= school.id %>">delete</a></td>
+				<td><a href="schools/<%= school.id %>/edit">edit</a></td></tr>
+			<% end %>
+	</table>
+<h1><a href="life_events">Life Events</a></h1>
+	<table class="table table-striped">
+		<th>Name</th>
+		<th>Delete</th>
+		<th>Edit</th>
+		<% @life_events.each do |life_event| %>
+			<tr>
+				<td><%= life_event.description %></td>
+				<td><a href="life_events/<%= life_event.id %>">delete</a	></td>
+				<td><a href="life_events/<%= life_event.id %>/edit">edit</a></td>
+			</tr>
+		<% end %>
+</table>
 </div>
-
-
-<a href="/life_events">Life events</a>
-
-
-
-<ul>
-<% @life_events.each do |life_event| %>
-<li>
-<%= life_event.description %>
-<a href="life_events/<%= life_event.id %>">delete</a>
-<a href="life_events/<%= life_event.id %>/edit">edit</a>
-</li>
-<% end %>
-</div>
-</div>
+</body>
 </Html>

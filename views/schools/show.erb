@@ -1,12 +1,16 @@
+<!DOCTYPE html>
 <html>
 <head>
-
+	<title>Life Events</title>
+	<link rel="stylesheet" type="text/css" href="/../application.css">
 </head>
 <body>
 
+<div class="container">
+
 <%= @school.name %><br>
 <%= @school.location %><br>
-<%= @school.graduation_date %><br>
+<%= @school.graduation_date.strftime("%b %d, %Y") %><br>
 
 <form action="/schools/<%=@school.id %>/delete" method="post">
 	<input type="hidden" name="_method" value="delete" />
@@ -17,6 +21,6 @@
 	
 
 
-
+</div>
 </body>
 </html>
